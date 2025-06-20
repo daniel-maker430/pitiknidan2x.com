@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
-/* THEME VARIABLES */
 :root {
   --bg: linear-gradient(#111, #2c2c2c);
   --text: #eaeaea;
@@ -14,7 +13,6 @@ body.dark {
   --accent: #ff8800;
 }
 
-/* GLOBAL STYLES */
 * {margin: 0; padding: 0; box-sizing: border-box;}
 body {
   font-family: 'DM Sans', sans-serif;
@@ -42,32 +40,48 @@ h2 {
   z-index: 999;
 }
 
-/* HEADER / PROFILE */
-header {
-  text-align: center;
-  padding: 4rem 1rem;
+/* Header */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
   background: linear-gradient(to right, #000, #1b1b1b);
   color: var(--accent);
+  flex-wrap: wrap;
   border-bottom: 4px solid var(--accent);
 }
-.profile-pic {
-  width: 160px;
-  height: 160px;
+.profile-pic-left {
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid var(--accent);
-  margin-bottom: 1.5rem;
+  border: 6px solid var(--accent);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
-header h1 {
+.profile-text h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
-header p {
-  font-size: 1.25rem;
-  color: var(--text);
+.profile-text p {
+  font-size: 1.3rem;
+}
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-pic-left {
+    width: 180px;
+    height: 180px;
+  }
+  .profile-text h1 {
+    font-size: 2.2rem;
+  }
 }
 
-/* SECTIONS */
+/* About and Gallery */
 .about, .gallery {
   background: var(--card);
   border-radius: 12px;
@@ -78,15 +92,12 @@ header p {
 }
 .gallery {
   border: 2px solid var(--accent);
-  background: linear-gradient(to top right, #222, #111);
 }
 .gallery h2 {
   font-size: 2.6rem;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
-/* GALLERY GRID */
 .gallery .grid {
   display: grid;
   gap: 1.5rem;
@@ -96,53 +107,27 @@ header p {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 12px;
-  position: relative;
   background: #000;
   border: 2px solid #444;
-  transition: transform 0.3s ease, border-color 0.3s;
-}
-.media-item:hover {
-  transform: scale(1.02);
-  border-color: var(--accent);
 }
 .media-item img,
 .media-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   border-radius: 12px;
 }
 
-/* CONTACT + BOOKING FORMS */
+/* Form */
 .forms-wrapper {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: stretch;
-  max-width: 1100px;
+  max-width: 600px;
   margin: 2rem auto;
 }
 .form-box {
-  flex: 1 1 350px;
-  margin: 0;
   background: var(--card);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,.1);
-}
-.form-divider {
-  width: 2px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 1rem 0;
-}
-body.dark .form-divider {
-  background: rgba(0, 0, 0, 0.2);
-}
-.form-box h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
 }
 .form-box form {
   display: flex;
@@ -173,12 +158,8 @@ button {
 button:hover {
   background: #ff9900;
 }
-.booking label {
-  font-weight: bold;
-  margin-top: .5rem;
-}
 
-/* LIGHTBOX */
+/* Lightbox */
 #lightbox {
   display: none;
   position: fixed;
@@ -192,45 +173,13 @@ button:hover {
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
-  box-shadow: 0 0 25px #000;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
   background: #000;
   color: var(--accent);
   font-size: .9rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .forms-wrapper {
-    flex-direction: column;
-  }
-  .form-divider {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
-  .about, .gallery {
-    padding: 1.5rem 1rem;
-    margin: 1.5rem;
-  }
-  .gallery h2 {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.6rem;
-  }
-  footer {
-    font-size: .8rem;
-    padding: .6rem;
-  }
 }
