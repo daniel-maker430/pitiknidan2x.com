@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DANIEL CALDERON | Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <button id="toggle-theme">🌙 Dark Mode</button>
+
+  <!-- Profile Section -->
+  <header>
+    <div class="hero">
+      <img src="your-photo.jpg" alt="Your Portrait" class="profile-pic" />
+      <h1><span style="font-size:1.6em">📸</span> Pitik ni Dan2x</h1>
+      <p>Freelance Photographer | Lens Artist</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate photographer capturing real moments through my lens. I specialise in portraits, events, and nature.</p>
+    <p>📧 Email: cildan430@gmail.com</p>
+    <p>📱 Phone: +63 9502883824</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>My Work</h2>
+    <div class="grid">
+      <div class="media-item">
+        <img src="photo1.jpg" alt="Event 1" class="lightbox-img" />
+      </div>
+      <div class="media-item">
+        <img src="photo2.jpg" alt="Portrait 1" class="lightbox-img" />
+      </div>
+      <div class="media-item">
+        <video src="wedding_sample.mp4" autoplay muted loop playsinline controls class="gallery-video"></video>
+      </div>
+      <div class="media-item">
+        <img src="photo3.jpg" alt="Nature 1" class="lightbox-img" />
+      </div>
+      <div class="media-item">
+        <img src="photo4.jpg" alt="Portrait 2" class="lightbox-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Booking Side-by-Side -->
+  <div class="forms-wrapper">
+    <div class="form-box contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <div class="form-box booking">
+      <h2>Book a Session</h2>
+      <form id="bookingForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <label for="booking-date">Select a Date:</label>
+        <input type="date" id="booking-date" required />
+        <textarea rows="4" placeholder="Additional Notes (optional)"></textarea>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <img id="lightbox-img" />
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Daniel Calderon Photography</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
